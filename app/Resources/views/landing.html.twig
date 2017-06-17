@@ -40,7 +40,7 @@
 				</header>
 				<div class="container">
 					<ul class="actions">
-						<li><a href="#one" class="button special scrolly">Читать</a></li>
+						<li><a href="#one" class="button scrolly">Читать</a></li>
 						<li><a href="#one" class="button special">Подписаться</a></li>
 					</ul>
 				</div>
@@ -53,6 +53,9 @@
 						<span class="image fit primary"><img src="{{ asset_url }}" alt="image " /></span>
 					{% endimage %}
 					<div class="content">
+						{% if newPost %}
+							<p>Ваше сообщение получено.</p>
+						{% endif %}
 						<header class="major">
 							<h2>Прежде чем умру, я ...</h2>
 						</header>
@@ -71,17 +74,19 @@
 					<header class="major">
 						<h2>Прежде чем умру, я ...</h2>
 					</header>
-					<form method="post" action="#">
+					{{ form_start(form) }}
 						<div class="row uniform">
-							<div class="12u$"><input type="text" name="message" id="message" placeholder="Прежде чем умру, я ..." /></div>
+							<div class="12u$">
+								{{ form_widget(form.text) }}
+							</div>
 							<div class="12u$">
 								<ul class="actions">
-									<li><input type="submit" value="Оправить" class="special" /></li>
-									<li><a href="" class="button special">Подписаться</a></li>
+									<li><input type="submit" class="special" value="Отправить" /></li>
+									<li><a href="" class="button">Подписаться</a></li>
 								</ul>
 							</div>
 						</div>
-					</form>
+					{{ form_end(form) }}
 				</div>
 				<footer>
 					<ul class="icons">
