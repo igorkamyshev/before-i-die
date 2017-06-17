@@ -56,11 +56,9 @@
 						<header class="major">
 							<h2>Прежде чем умру, я ...</h2>
 						</header>
-						<p>... lorem lorem lorem lorem lorem</p>
-						<p>... lorem lorem lorem lorem lorem</p>
-						<p>... lorem lorem lorem lorem lorem</p>
-						<p>... lorem lorem lorem lorem lorem</p>
-						<p>... lorem lorem lorem lorem lorem</p>
+						{% for post in posts %}
+							<p>{{ post.text }}</p>
+						{% endfor %}
 					</div>
 					<a href="#footer" class="goto-next scrolly">Next</a>
 				</div>
