@@ -19,3 +19,5 @@ parameters:
     secret: ThisTokenIsNotSoSecretChangeIt
 
     app.telegram_api_key: ThisKeyIsNotSoKey
+    app.recaptcha_site_key: ~
+    app.recaptcha_secret_key: ~

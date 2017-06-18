@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Post;
+use AppBundle\Utils\Requester;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -36,17 +37,33 @@ class DefaultController extends Controller
         $newPost = false;
 
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
 
-            $post = (new Post())
-                ->setText($data['text']);
+            /** @var Requester $requester */
+            $requester = $this->get('requester');
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($post);
-            $em->flush();
+            $recaptchaResponse = json_decode($requester->call(
+                'https://www.google.com/recaptcha/api/siteverify',
+                [
+                    'secret' => $this->getParameter('app.recaptcha_secret_key'),
+                    'response' => $_POST['g-recaptcha-response'],
+                ],
+                [],
+                Request::METHOD_POST
+            ), true);
 
-            $newPost = true;
+            if ($recaptchaResponse['success']) {
+                $post = (new Post())
+                    ->setText($data['text']);
+
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($post);
+                $em->flush();
+
+                $newPost = true;
+            }
         }
 
         $posts = $this

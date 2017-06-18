@@ -6,7 +6,13 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<script src="https://use.fontawesome.com/33c964976c.js"></script>
+		<script>
+			function onSubmit(token) {
+				document.getElementById("form").submit();
+			}
+		</script>
 
 		{% javascripts '@AppBundle/Resources/public/js/ie/html5shiv.js' %}
 			<!--[if lte IE 8]><script src="{{ asset_url }}"></script><![endif]-->
@@ -74,14 +80,21 @@
 					<header class="major">
 						<h2>Прежде чем умру, я ...</h2>
 					</header>
-					{{ form_start(form) }}
+					{{ form_start(form, {'attr': {'id': 'form'}}) }}
 						<div class="row uniform">
 							<div class="12u$">
 								{{ form_widget(form.text) }}
 							</div>
 							<div class="12u$">
 								<ul class="actions">
-									<li><input type="submit" class="special" value="Отправить" /></li>
+									<li>
+										<input
+												type="submit"
+												class="g-recaptcha special"
+												value="Отправить"
+												data-sitekey="{{ recaptcha_site_key }}"
+												data-callback='onSubmit'
+										/></li>
 									<li><a href="" class="button">Подписаться</a></li>
 								</ul>
 							</div>

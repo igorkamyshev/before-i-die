@@ -37,6 +37,8 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    globals:
+         recaptcha_site_key: '%app.recaptcha_site_key%'
 
 # Doctrine Configuration
 doctrine:
