@@ -39,6 +39,7 @@ twig:
     strict_variables: '%kernel.debug%'
     globals:
          recaptcha_site_key: '%app.recaptcha_site_key%'
+         telegram_link: '%app.telegram_link%'
 
 # Doctrine Configuration
 doctrine:

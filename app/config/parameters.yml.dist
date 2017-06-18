@@ -18,6 +18,8 @@ parameters:
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
 
-    app.telegram_api_key: ThisKeyIsNotSoKey
+    app.channel.telegram_api_key: ThisKeyIsNotSoKey
+    app.bot.telegram_api_key: ThisKeyIsNotSoKey
     app.recaptcha_site_key: ~
     app.recaptcha_secret_key: ~
+    app.telegram_link: ~
