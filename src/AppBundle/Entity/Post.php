@@ -46,6 +46,8 @@ class Post
      */
     public function setText($text)
     {
+        $text = trim($text, '.');
+
         $this->text = $text;
         return $this;
     }

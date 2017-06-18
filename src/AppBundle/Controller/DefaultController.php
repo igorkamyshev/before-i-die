@@ -28,7 +28,9 @@ class DefaultController extends Controller
             ->add('text', TextType::class,
                 [
                     'attr' => [
-                        'placeholder' => 'Прежде чем умру, я ...',
+                        'placeholder'  => 'Прежде чем умру, я ...',
+                        'autocomplete' => 'off',
+                        'value'        => '',
                     ],
                 ]
             )
