@@ -66,7 +66,7 @@ class DefaultController extends Controller
 
                 $bot = new Api($telegramApiKey);
                 $bot->sendMessage([
-                    'chat_id' => $telegramChannelName,
+                    'chat_id' => '@' . $telegramChannelName,
                     'text'    => $post->getText(),
                 ]);
 
