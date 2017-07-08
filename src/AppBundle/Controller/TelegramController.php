@@ -16,7 +16,7 @@ class TelegramController extends Controller
      */
     public function telegramAction($apiKey)
     {
-        $telegramApiKey = $this->getParameter('app.telegram_api_key');
+        $telegramApiKey = $this->getParameter('app.channel.telegram_api_key');
 
         if ($apiKey != $telegramApiKey) {
             throw $this->createAccessDeniedException();
