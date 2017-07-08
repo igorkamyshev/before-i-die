@@ -31,6 +31,12 @@ class TelegramController extends Controller
         $em->persist($chat);
         $em->flush();
 
+        $test = new Api($telegramApiKey);
+        $test->sendMessage([
+            'chatId' => '@before_i_die',
+            'text'   => 'from bot!',
+        ]);
+
         return new Response('ok');
     }
 }
