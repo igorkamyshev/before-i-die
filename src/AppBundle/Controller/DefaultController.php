@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
+use Telegram\Bot\Api;
 
 class DefaultController extends Controller
 {
@@ -59,6 +60,15 @@ class DefaultController extends Controller
             if ($recaptchaResponse['success']) {
                 $post = (new Post())
                     ->setText($data['text']);
+
+                $telegramApiKey = $this->getParameter('app.channel.telegram_api_key');
+                $telegramChannelName = $this->getParameter('app.channel.name');
+
+                $bot = new Api($telegramApiKey);
+                $bot->sendMessage([
+                    'chat_id' => $telegramChannelName,
+                    'text'    => $post->getText(),
+                ]);
 
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($post);

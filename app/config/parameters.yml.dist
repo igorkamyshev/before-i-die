@@ -19,6 +19,7 @@ parameters:
     secret: ThisTokenIsNotSoSecretChangeIt
 
     app.channel.telegram_api_key: ThisKeyIsNotSoKey
+    app.channel.name: ~
     app.bot.telegram_api_key: ThisKeyIsNotSoKey
     app.recaptcha_site_key: ~
     app.recaptcha_secret_key: ~
