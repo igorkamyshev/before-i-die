@@ -26,11 +26,11 @@ class TelegramController extends Controller
 
         $chatId = $request["message"]["chat"]["id"];
 
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $chat = $em->getRepository(TelegramChat::class)->findOneBy(['chat' => $chatId]);
 
-        if (!$chat) {
+        if (!$chat && $chatId) {
             $chat = (new TelegramChat())->setChat($chatId);
         }
 
