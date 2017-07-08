@@ -39,7 +39,7 @@ class TelegramController extends Controller
 
         $test = new Api($telegramApiKey);
         $test->sendMessage([
-            'chatId' => '@before_i_die',
+            'chat_id' => '@before_i_die',
             'text'   => 'from bot!',
         ]);
 
