@@ -9,3 +9,5 @@ tslint.json
 **/__tests__
 jest.config.js
 coverage
+out
+build

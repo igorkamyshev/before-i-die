@@ -1,19 +1,23 @@
 {
     "compilerOptions": {
-        "lib": ["es6", "dom", "esnext"],
+        "lib": ["es6", "es2015", "dom", "esnext"],
         "target": "es6",
         "module": "commonjs",
-        "sourceMap": true,
+        "sourceMap": false,
         "rootDir": "src",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "baseUrl": ".",
+        "outDir": "build",
         "paths": {
             "@bid/*": [ "./src/*" ]
-        },
+        }
     },
     "include": [
       "src/**/*.ts",
       "node_modules/@types/jest"
+    ],
+    "exclude": [
+        "**/__tests__"
     ]
 }
