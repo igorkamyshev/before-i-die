@@ -10,7 +10,7 @@
         "baseUrl": ".",
         "outDir": "build",
         "paths": {
-            "@bid/*": [ "./src/*" ]
+            "@app/*": [ "./src/*" ]
         }
     },
     "include": [

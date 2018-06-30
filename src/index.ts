@@ -1,4 +1,4 @@
-import Server from '@bid/Server'
+import Server from '@app/Server'
 
 const port = (): number => {
     const ARGS = process.argv.slice(2)

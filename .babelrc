@@ -3,7 +3,7 @@
     ["module-resolver", {
       "root": ["./build"],
       "alias": {
-        "@bid": "./build"
+        "@app": "./build"
       }
     }]
   ]
