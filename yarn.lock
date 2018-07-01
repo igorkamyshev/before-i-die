@@ -4201,9 +4201,9 @@ ts-node@^7.0.0:
     source-map-support "^0.5.6"
     yn "^2.0.0"
 
-tsconfig-paths@^3.4.1:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.4.1.tgz#9e03c5833f09c23e2c330b785e875d6cfc92f43a"
+tsconfig-paths@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.4.2.tgz#4640bffaeee3fc0ab986607edae203859156a8c3"
   dependencies:
     deepmerge "^2.0.1"
     minimist "^1.2.0"
