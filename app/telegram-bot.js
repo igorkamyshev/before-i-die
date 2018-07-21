@@ -18,7 +18,7 @@ const start = () => bot.on('message', req => (
 const getLastMessage = () => bot.getChat(TARGET_CHANNEL)
   .then((chat) => {
     if (!chat.pinned_message) {
-      throw Error('last message unavalible')
+      throw Error('last message unavailable')
     }
 
     return chat.pinned_message.text
