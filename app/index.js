@@ -1,4 +1,5 @@
 const bodyParser = require('body-parser')
+const cors = require('cors')
 const express = require('express')
 const telegramBot = require('./telegram-bot')
 
@@ -6,10 +7,7 @@ const app = express()
 const port = 8080
 
 app.use(bodyParser.json())
-
-app.get('/', (_, res) => {
-  res.send('Hello!')
-})
+app.use(cors())
 
 app.get('/message', (_, res) => {
   telegramBot.getLastMessage()
