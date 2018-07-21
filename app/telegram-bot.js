@@ -6,7 +6,7 @@ const TARGET_CHANNEL = '@before_i_die'
 const bot = new TelegramBot(TELEGRAM_BOT_TOKEN, { polling: true })
 
 const send = (chatId, message) => bot.sendMessage(chatId, message, { parse_mode: 'Markdown' })
-const publish = request => send(65400792, request.text || 'hmmm')
+const publish = request => send(TARGET_CHANNEL, request.text)
 const response = (request, message) => send(request.chat.id, message)
 
 const start = () => bot.on('message', req => (
