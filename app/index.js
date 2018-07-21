@@ -9,19 +9,17 @@ const port = 8080
 app.use(bodyParser.json())
 app.use(cors())
 
-app.get('/message', (_, res) => {
-  telegramBot.getLastMessage()
-    .then(
-        msg => {
-            res.status(200)
-            res.send(msg)
-        },
-        err => {
-            response.status(500)
-            res.send(err)
-        },
-    )
-})
+app.get('/message', (_, res) => telegramBot.getLastMessage()
+  .then(
+    (msg) => {
+      res.status(200)
+      res.send(msg)
+    },
+    (err) => {
+      res.status(500)
+      res.send(err)
+    },
+  ))
 
 app.post('/new', (req, res) => telegramBot.newPost(req.body.message)
   .then(
@@ -29,9 +27,8 @@ app.post('/new', (req, res) => telegramBot.newPost(req.body.message)
     () => res.status(500),
   )
   .then(
-    () => res.send()
-  )
-)
+    () => res.send(),
+  ))
 
 telegramBot.start()
 app.listen(port)
