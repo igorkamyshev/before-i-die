@@ -8,7 +8,5 @@ app.get('/', (_, res) => {
   res.send('Hello!')
 })
 
-getLastMessages(100).then(r => console.log(r))
-
 telegramBot.start()
 app.listen(port)
