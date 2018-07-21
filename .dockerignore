@@ -6,3 +6,4 @@ eslint.json
 *.log
 .gitignore
 .git
+.env
