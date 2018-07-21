@@ -1,9 +1,11 @@
 {
     "name": "before-i-die",
-    "script": "./out/index.js",
-    "instances": "max",
-    "exec_mode": "cluster",
-    "env_prod": {
-        "NODE_ENV": "production"	
+    "script": "index.js",
+    "instances": "1",
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "env_production" : {
+      "NODE_ENV": "production"
     }
 }

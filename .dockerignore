@@ -2,12 +2,7 @@ node_modules
 .travis.yml
 LICENSE
 README.md
-tslint.json
+eslint.json
 *.log
 .gitignore
 .git
-**/__tests__
-jest.config.js
-coverage
-out
-build
