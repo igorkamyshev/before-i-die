@@ -15,7 +15,7 @@ const start = () => bot.on('message', req => (
     : publish(req)
 ))
 
-const getLastMessage = () => bot.getChat(TARGET_CHANNEL)
+const getFeaturedMessage = () => bot.getChat(TARGET_CHANNEL)
   .then((chat) => {
     if (!chat.pinned_message) {
       throw Error('last message unavailable')
@@ -28,6 +28,6 @@ const newPost = message => publish({ text: message })
 
 module.exports = {
   start,
-  getLastMessage,
+  getFeaturedMessage,
   newPost,
 }
