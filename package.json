@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/igorkamyshev/before-i-die#readme",
   "devDependencies": {
-    "@solid-soda/eslint-config": "^2.1.5",
+    "@solid-soda/eslint-config": "^2.1.6",
     "dotenv": "^6.0.0",
     "eslint": "^5.3.0"
   },
