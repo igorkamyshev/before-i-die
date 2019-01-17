@@ -2016,9 +2016,9 @@ pm2-multimeter@^0.1.2:
   dependencies:
     charm "~0.1.1"
 
-pm2@^3.2.8:
-  version "3.2.8"
-  resolved "https://registry.yarnpkg.com/pm2/-/pm2-3.2.8.tgz#41d850eb43e86775a3c12300366c73bb4045f582"
+pm2@^3.2.9:
+  version "3.2.9"
+  resolved "https://registry.yarnpkg.com/pm2/-/pm2-3.2.9.tgz#6e0e009355fa089007689d97c6565f6b3e341476"
   dependencies:
     "@pm2/agent" "^0.5.22"
     "@pm2/io" "~2.4.2"
